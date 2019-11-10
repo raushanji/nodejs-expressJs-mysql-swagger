@@ -1,0 +1,18 @@
+{
+    "swaggerDefinition": {
+        "info": {
+            "title": "Customer API",
+            "description": "Customer API Information",
+            "contact": {
+                "name": "Raushan Ranjan"
+            },
+            "servers": [
+                "http://localhost:3000"
+            ]
+        },
+        "basePath": "/"
+    },
+    "apis": [
+        "./app/routes/appRoutes.js"
+    ]
+}
