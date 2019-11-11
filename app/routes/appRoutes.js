@@ -21,7 +21,13 @@ module.exports = function (app) {
  * @swagger
  * /tasks:
  *  post:
- *   description: Use to request all tasks
+ *   description: Used to add new tasks
+ *   parameters: [{
+ *          name: body,
+ *          in: body,
+ *          required: true,
+ *          description: Enter task name and task status to create new task
+ *        }]
  *   responses:
  *      '200':
  *         description: A successful response
@@ -30,9 +36,16 @@ module.exports = function (app) {
 
   /**
  * @swagger
- * /tasks/:taskId:
+ * /tasks/{taskId}:
  *  get:
- *   description: Use to request all tasks
+ *   description: Used to get detail of a particular task
+ *   parameters: [{
+ *        name: taskId,
+ *        in: path,
+ *        required: true,
+ *        type: integer,
+ *        description: Enter taskId to get detail
+ *    }]
  *   responses:
  *      '200':
  *         description: A successful response
@@ -41,9 +54,22 @@ module.exports = function (app) {
 
   /**
  * @swagger
- * /tasks/:taskId:
+ * /tasks/{taskId}:
  *  put:
- *   description: Use to request all tasks
+ *   description: Used to update detail of a particular task
+ *   parameters: [{
+ *            name: taskId,
+ *            in: path,
+ *            required: true,
+ *            type: integer,
+ *            description: Enter taskId to update the task
+ *        },
+ *        {
+ *            name: body,
+ *            in: body,
+ *            required: true,
+ *            description: Enter detail of task and status, if want to update
+ *         }]
  *   responses:
  *      '200':
  *         description: A successful response
@@ -52,9 +78,16 @@ module.exports = function (app) {
 
   /**
  * @swagger
- * /tasks/:taskId:
+ * /tasks/{taskId}:
  *  delete:
- *   description: Use to request all tasks
+ *   description: Used to delete a particular task
+ *   parameters: [{
+ *                name: taskId,
+ *                in: path,
+ *                required: true,
+ *                type: integer,
+ *                description: Enter the taskId to delete the task
+ *          }]
  *   responses:
  *      '200':
  *         description: A successful response
